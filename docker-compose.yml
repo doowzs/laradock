@@ -365,15 +365,16 @@ services:
     bitwarden-rs:
       build:
         context: ./bitwarden-rs
+      restart: always
       volumes:
         - ${DATA_PATH_HOST}/bitwarden-rs:/data
       ports:
         - ${BWRS_HOST_HTTP_PORT}:80
       environment:
-        - DOMAIN:${BWRS_HOST_DOMAIN}
-        - WEBSOCKET_ENABLED:${BWRS_WEBSOCKET_ENABLED}
-        - SIGNUPS_ALLOWED:${BWRS_SIGNUPS_ALLOWED}
-        - ADMIN_TOKEN:${BWRS_ADMIN_TOKEN}
+        - DOMAIN=${BWRS_HOST_DOMAIN}
+        - ADMIN_TOKEN=${BWRS_ADMIN_TOKEN}
+        - WEBSOCKET_ENABLED=${BWRS_WEBSOCKET_ENABLED}
+        - SIGNUPS_ALLOWED=${BWRS_SIGNUPS_ALLOWED}
       networks:
         - backend
 
