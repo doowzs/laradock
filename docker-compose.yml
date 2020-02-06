@@ -365,7 +365,7 @@ services:
     bitwarden-rs:
       build:
         context: ./bitwarden-rs
-      volumns:
+      volumes:
         - ${DATA_PATH_HOST}/bitwarden-rs:/data
       ports:
         - ${BWRS_HOST_HTTP_PORT}:80
