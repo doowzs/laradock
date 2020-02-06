@@ -7,6 +7,8 @@ networks:
     driver: ${NETWORKS_DRIVER}
 
 volumes:
+  bitwarden-rs:
+    driver: ${VOLUMES_DRIVER}
   mysql:
     driver: ${VOLUMES_DRIVER}
   percona:
@@ -358,6 +360,20 @@ services:
       networks:
         - frontend
         - backend
+
+### Bitwarden RS #########################################
+    bitwarden-rs:
+      build:
+        context: ./bitwarden-rs
+      volumns:
+        - ${DATA_PATH_HOST}/bitwarden-rs:/data
+      ports:
+        - ${BWRS_HOST_HTTP_PORT}:80
+      environment:
+        - DOMAIN:${BWRS_HOST_DOMAIN}
+        - WEBSOCKET_ENABLED:${BWRS_WEBSOCKET_ENABLED}
+        - SIGNUPS_ALLOWED:${BWRS_SIGNUPS_ALLOWED}
+        - ADMIN_TOKEN:${BWRS_ADMIN_TOKEN}
 
 ### HHVM #################################################
     hhvm:
