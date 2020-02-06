@@ -374,6 +374,8 @@ services:
         - WEBSOCKET_ENABLED:${BWRS_WEBSOCKET_ENABLED}
         - SIGNUPS_ALLOWED:${BWRS_SIGNUPS_ALLOWED}
         - ADMIN_TOKEN:${BWRS_ADMIN_TOKEN}
+      networks:
+        - backend
 
 ### HHVM #################################################
     hhvm:

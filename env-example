@@ -270,7 +270,7 @@ APACHE_DOCUMENT_ROOT=/var/www/
 ### BITWARDEN-RS ##########################################
 
 BWRS_HOST_DOMAIN=https://bw.domain.tld
-BWRS_HOST_HTTP_PORT=8701
+BWRS_HOST_HTTP_PORT=8080
 BWRS_WEBSOCKET_ENABLED=true
 BWRS_SIGNUPS_ALLOWED=true
 BWRS_ADMIN_TOKEN=some_random_token_as_per_above_explanation
