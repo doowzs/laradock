@@ -761,6 +761,10 @@ PGADMIN_PORT=5050
 PGADMIN_DEFAULT_EMAIL=pgadmin4@pgadmin.org
 PGADMIN_DEFAULT_PASSWORD=admin
 
+### Postwoman ################################################
+
+POSTWOMAN_PORT=3000
+
 ### SONARQUBE ################################################
 ## docker-compose up -d sonarqube
 ## (If you encounter a database error)

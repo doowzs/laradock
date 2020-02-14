@@ -361,6 +361,15 @@ services:
         - frontend
         - backend
 
+### Postwoman ############################################
+    postwoman:
+      build:
+        context: ./postwoman
+      ports:
+        - ${POSTWOMAN_PORT}:3000
+      networks:
+        - backend
+
 ### Bitwarden RS #########################################
     bitwarden-rs:
       build:
