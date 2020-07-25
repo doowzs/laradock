@@ -450,6 +450,7 @@ services:
         - ${EPAD_HOST_HTTP_PORT}:9001
       environment:
         - ADMIN_PASSWORD=${EPAD_ADMIN_PASSWORD}
+        - EDIT_ONLY=${EPAD_EDIT_ONLY}
       networks:
         - backend
 
